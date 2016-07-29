@@ -1,0 +1,98 @@
+<table>
+	<thead>
+		<tr>
+			<th>Destination</th>
+			<th>Travel Start Date</th>
+			<th>Travel End Date</th>
+			<th>Plan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($user_trips as $trip) { ?>
+		<tr>
+			<td><a href="/travels/destination/<?= $trip['id'] ?>"><?= $trip['destination'] ?></a></td>
+			<td><?= date('F j, Y', strtotime($trip['date_from'])) ?></td>
+			<td><?= date('F j, Y', strtotime($trip['date_to'])) ?></td>
+			<td><?= $trip['description'] ?></td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>
+
+myTravels = [];
+otherTravels
+travels = query 
+name = Joyce 
+for travel in travels
+	if myTravels.length > 0 or myTravels.includes(travel) == false
+		if creator.name == name 
+			myTravels.push(travel)
+		else if travel.name != null && travel.name == name
+			myTravel.push(travel)
+	else if otherTravels.includes(travel) == false
+		otherTravels.push(travel)
+
+SELECT destination, creator.name as creator, users.name as joiner FROM travels
+join users as creator on creator.id = travels.user_id 
+left join joinups 
+	on joinups.travel_id = travels.id
+    left join users on users.id = joinups.user_id
+Where creator.id = 3 or joinups.user_id = 3
+
+SELECT *
+FROM travels
+left join joinups on travels.user_id 
+WHERE travels.user_id = 1
+
+LEFT JOIN joinups
+	ON joinups.travel_id = travels.id
+    LEFT JOIN users as joiner
+		on joiner.id = joinups.user_id
+where travels.user_id = 1"
+
+travels = execute(aboveQuery)
+for var index = 0; index < travels.length, index++{
+	if index > 0 && travels[index - 1] == travels[index]
+		<p>destination</p> = travels.destination
+}
+
+SELECT travels.destination as destination,
+		creator.name as creator,
+        followers.name as follower
+From travels
+	join users as creator on travels.user_id = creator.id
+    left join joinups on joinups.travel_id = travels.id
+		left join users as followers on joinups.user_id = followers.id
+where creator.name = 'Joyce'
+
+SELECT users.name as joiner, 
+	travels.destination as destination,
+    creator.name as creator
+From joinups
+	join users 
+		on user_id = users.id
+    join travels 
+		on travels.id = joinups.travel_id
+	join users as creator 
+		on creator.id = travels.user_id
+where creator.id = 1
+
+SELECT users.name, travels.*
+FROM users
+LEFT JOIN travels
+	ON travels.user_id = users.id
+LEFT JOIN joinups
+	ON joinups.user_id = users.id
+WHERE joinups.user_id = 1
+
+
+
+
+
+
+
+
+
+
+
+
